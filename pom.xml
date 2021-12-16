@@ -14,5 +14,7 @@
         <module>ecommerce-order</module>
         <module>ecommerce-product</module>
         <module>ecommerce-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
     </modules>
 </project>
