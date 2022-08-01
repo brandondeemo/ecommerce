@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+    alicloud:
+      access-key: LTAI5tC4XfnfWnueDXicHJeE
+      secret-key: ubrGVtdflfHXImbTDTxoZZojoL7tT4
+      oss:
+        endpoint: oss-us-east-1.aliyuncs.com
+        bucket: sun-ecommerce
+  application:
+    name: ecommerce-third-party
+
+server:
+  port: 30000
