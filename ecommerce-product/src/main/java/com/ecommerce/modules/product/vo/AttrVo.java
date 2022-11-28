@@ -8,7 +8,6 @@ public class AttrVo {
     /**
      * 属性id
      */
-    @TableId
     private Long attrId;
     /**
      * 属性名
@@ -18,6 +17,10 @@ public class AttrVo {
      * 是否需要检索[0-不需要，1-需要]
      */
     private Integer searchType;
+    /**
+     * 值类型[0-为单个值，1-可以选择多个值]
+     */
+    private Integer valueType;
     /**
      * 属性图标
      */
@@ -31,7 +34,7 @@ public class AttrVo {
      */
     private Integer attrType;
     /**
-     * 启用状态[0 - 禁用，1 - 启用]
+     * 启用状态[0 - 禁用，1 -  启用]
      */
     private Long enable;
     /**
