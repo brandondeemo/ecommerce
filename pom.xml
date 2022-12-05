@@ -3,15 +3,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ecommerce</groupId>
-    <artifactId>ecommerce-ware</artifactId>
+    <artifactId>ecommerce</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ecommerce</name>
     <description>integrete service</description>
+    <packaging>pom</packaging>
 
     <modules>
         <module>ecommerce-coupon</module>
         <module>ecommerce-member</module>
         <module>ecommerce-order</module>
+        <module>ecommerce-third-party</module>
         <module>ecommerce-product</module>
         <module>ecommerce-ware</module>
         <module>renren-fast</module>

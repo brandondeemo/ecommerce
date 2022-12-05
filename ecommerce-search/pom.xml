@@ -8,16 +8,14 @@
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
     <groupId>com.ecommerce</groupId>
-    <artifactId>ecommerce-coupon</artifactId>
+    <artifactId>ecommerce-search</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
-    <name>ecommerce-coupon</name>
-    <description>Demo project for Spring Boot</description>
+    <name>ecommerce-search</name>
+    <description>ecommerce-search</description>
     <properties>
         <java.version>14</java.version>
-        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <elasticsearch.version>7.4.2</elasticsearch.version>
     </properties>
     <dependencies>
         <dependency>
@@ -25,13 +23,28 @@
             <artifactId>commerce-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>7.4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>7.4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>7.4.2</version>
         </dependency>
 
         <dependency>
@@ -39,31 +52,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-config-server</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${project.parent.version}</version>
             </plugin>
         </plugins>
     </build>

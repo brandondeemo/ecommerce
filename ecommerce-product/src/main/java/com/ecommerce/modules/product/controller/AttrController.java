@@ -1,8 +1,11 @@
 package com.ecommerce.modules.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.ecommerce.modules.product.entity.ProductAttrValueEntity;
+import com.ecommerce.modules.product.service.ProductAttrValueService;
 import com.ecommerce.modules.product.vo.AttrGroupRelationVo;
 import com.ecommerce.modules.product.vo.AttrRespVo;
 import com.ecommerce.modules.product.vo.AttrVo;
@@ -28,6 +31,19 @@ import com.ecommerce.common.utils.R;
 public class AttrController {
     @Autowired
     private AttrService attrService;
+
+    @Autowired
+    ProductAttrValueService productAttrValueService;
+
+
+    // /product/attr/base/listforspu/{spuId}
+    @GetMapping("/base/listforspu/{spuId}")
+    public R baseAttrListForSpu(@PathVariable("spuId") Long supId) {
+
+        List<ProductAttrValueEntity> entities = productAttrValueService.baseAttrListForSpu(supId);
+
+        return R.ok().put("data", entities);
+    }
 
     @GetMapping("/{attrType}/list/{catelogId}")
     public R baseAttrList(@RequestParam Map<String, Object> params,
@@ -78,6 +94,16 @@ public class AttrController {
     @RequestMapping("/update")
     public R update(@RequestBody AttrVo attr){
 		attrService.updateAttr(attr);
+
+        return R.ok();
+    }
+
+    // /product/attr/update/{spuId}
+    @PostMapping("/update/{spuId}")
+    public R updateSpuAttr(@PathVariable("spuId") Long spuId,
+                           @RequestBody List<ProductAttrValueEntity> entities) {
+
+        productAttrValueService.updateSpuAttr(spuId, entities);
 
         return R.ok();
     }

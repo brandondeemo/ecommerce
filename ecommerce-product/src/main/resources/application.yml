@@ -12,6 +12,8 @@ spring:
 
   application:
     name: ecommerce-product
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -27,4 +29,5 @@ server:
 
 logging:
   level:
-    com.ecommerce.modules: debug
+    com.ecommerce: debug
+

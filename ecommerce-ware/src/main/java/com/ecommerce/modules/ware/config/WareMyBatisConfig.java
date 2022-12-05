@@ -1,4 +1,4 @@
-package com.ecommerce.modules.product.config;
+package com.ecommerce.modules.ware.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
@@ -6,11 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
 @EnableTransactionManagement
-@MapperScan("com.ecommerce.modules.product.dao")
-public class MybatisConfig {
-
+@MapperScan("com.ecommerce.modules.ware.dao")
+@Configuration
+public class WareMyBatisConfig {
     //引入分页插件
     @Bean
     public PaginationInterceptor paginationInterceptor(){

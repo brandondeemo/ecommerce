@@ -12,6 +12,9 @@ spring:
   application:
     name: ecommerce-ware
 
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   #  配置数据库，使其主键自增， entity类下 @TableId 的变量为主键
@@ -21,3 +24,7 @@ mybatis-plus:
 
 server:
   port: 11000
+
+logging:
+  level:
+    com.ecommerce: debug

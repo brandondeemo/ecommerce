@@ -8,7 +8,6 @@ import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 @Configuration
 public class EcommerceCorsConfiguration {
-
     @Bean
     public CorsWebFilter corsWebFilter(){
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
