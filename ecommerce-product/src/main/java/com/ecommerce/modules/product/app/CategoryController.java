@@ -1,19 +1,16 @@
-package com.ecommerce.modules.product.controller;
+package com.ecommerce.modules.product.app;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.modules.product.entity.CategoryEntity;
 import com.ecommerce.modules.product.service.CategoryService;
-import com.ecommerce.common.utils.PageUtils;
 import com.ecommerce.common.utils.R;
 
 

@@ -1,14 +1,12 @@
-package com.ecommerce.modules.product.controller;
+package com.ecommerce.modules.product.app;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 
 import com.ecommerce.common.valid.AddGroup;
 import com.ecommerce.common.valid.UpdateGroup;
 import com.ecommerce.common.valid.UpdateStatusGroup;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,8 +18,6 @@ import com.ecommerce.modules.product.entity.BrandEntity;
 import com.ecommerce.modules.product.service.BrandService;
 import com.ecommerce.common.utils.PageUtils;
 import com.ecommerce.common.utils.R;
-
-import javax.validation.Valid;
 
 
 /**

@@ -7,14 +7,19 @@ import com.ecommerce.modules.product.service.BrandService;
 import com.ecommerce.modules.product.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.test.web.reactive.server.JsonPathAssertions;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 // unit test
 
 @Slf4j
@@ -26,6 +31,27 @@ class EcommerceProductApplicationTests {
 
     @Autowired
     CategoryService categoryService;
+
+    @Autowired
+    StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    RedissonClient redissonClient;
+
+    @Test
+    void testRedisson() {
+        System.out.println(redissonClient);
+    }
+
+    @Test
+    void testRedis(){
+        ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
+        // 保存
+        ops.set("hello2", "redis" + UUID.randomUUID().toString());
+        // 查询
+        String hello = ops.get("hello");
+        System.out.println("保存的数据是: " + hello);
+    }
 
     @Test
     void testFindPath(){

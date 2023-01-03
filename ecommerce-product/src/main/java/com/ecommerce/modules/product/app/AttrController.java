@@ -1,4 +1,4 @@
-package com.ecommerce.modules.product.controller;
+package com.ecommerce.modules.product.app;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,13 +6,11 @@ import java.util.Map;
 
 import com.ecommerce.modules.product.entity.ProductAttrValueEntity;
 import com.ecommerce.modules.product.service.ProductAttrValueService;
-import com.ecommerce.modules.product.vo.AttrGroupRelationVo;
 import com.ecommerce.modules.product.vo.AttrRespVo;
 import com.ecommerce.modules.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.ecommerce.modules.product.entity.AttrEntity;
 import com.ecommerce.modules.product.service.AttrService;
 import com.ecommerce.common.utils.PageUtils;
 import com.ecommerce.common.utils.R;

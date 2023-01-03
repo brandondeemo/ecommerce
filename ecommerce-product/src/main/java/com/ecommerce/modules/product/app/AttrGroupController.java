@@ -1,6 +1,5 @@
-package com.ecommerce.modules.product.controller;
+package com.ecommerce.modules.product.app;
 
-import java.security.PublicKey;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;

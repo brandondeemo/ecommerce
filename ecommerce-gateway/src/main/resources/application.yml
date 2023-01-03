@@ -17,7 +17,7 @@ spring:
         - id: product_route
           uri: lb://ecommerce-product
           predicates:
-            - Path=/api/product/**
+            - Path=/api/product/**,/hello
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
@@ -48,6 +48,12 @@ spring:
             - Path=/api/**
           filters:
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+        - id: ecommerce_host_route
+          uri: lb://ecommerce-product
+          predicates:
+            - Host=**.ecommerce.com
+
 
 ## 前端项目，发送请求，都需要带有 /api前缀
 

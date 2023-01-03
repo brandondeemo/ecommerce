@@ -31,7 +31,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
+            <version>1.18.20</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
@@ -68,6 +68,12 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.alibaba.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
@@ -82,7 +88,7 @@
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-starter-loadbalancer</artifactId>-->
-<!--            <version>2.2.1.RELEASE</version>-->
+<!--            <version>3.1.5</version>-->
 <!--        </dependency>-->
 
         <!--        配置中心来做配置管理 需要排除renren fast 所以在每个服务中单独创建-->

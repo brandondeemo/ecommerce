@@ -1,4 +1,4 @@
-package com.ecommerce.modules.product.controller;
+package com.ecommerce.modules.product.app;
 
 import java.util.Arrays;
 import java.util.List;

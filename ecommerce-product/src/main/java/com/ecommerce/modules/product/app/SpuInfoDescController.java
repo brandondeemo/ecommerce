@@ -1,4 +1,4 @@
-package com.ecommerce.modules.product.controller;
+package com.ecommerce.modules.product.app;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ecommerce.modules.product.entity.ProductAttrValueEntity;
-import com.ecommerce.modules.product.service.ProductAttrValueService;
+import com.ecommerce.modules.product.entity.SpuInfoDescEntity;
+import com.ecommerce.modules.product.service.SpuInfoDescService;
 import com.ecommerce.common.utils.PageUtils;
 import com.ecommerce.common.utils.R;
 
 
 
 /**
- * spu属性值
+ * spu信息介绍
  *
  * @author Wonpyeong Son
  * @email sonwonpyeong@yonsei.ac.kr
  * @date 2021-12-15 22:23:16
  */
 @RestController
-@RequestMapping("product/productattrvalue")
-public class ProductAttrValueController {
+@RequestMapping("product/spuinfodesc")
+public class SpuInfoDescController {
     @Autowired
-    private ProductAttrValueService productAttrValueService;
+    private SpuInfoDescService spuInfoDescService;
 
     /**
      * 列表
      */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = productAttrValueService.queryPage(params);
+        PageUtils page = spuInfoDescService.queryPage(params);
 
         return R.ok().put("page", page);
     }
@@ -44,19 +44,19 @@ public class ProductAttrValueController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id){
-		ProductAttrValueEntity productAttrValue = productAttrValueService.getById(id);
+    @RequestMapping("/info/{spuId}")
+    public R info(@PathVariable("spuId") Long spuId){
+		SpuInfoDescEntity spuInfoDesc = spuInfoDescService.getById(spuId);
 
-        return R.ok().put("productAttrValue", productAttrValue);
+        return R.ok().put("spuInfoDesc", spuInfoDesc);
     }
 
     /**
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody ProductAttrValueEntity productAttrValue){
-		productAttrValueService.save(productAttrValue);
+    public R save(@RequestBody SpuInfoDescEntity spuInfoDesc){
+		spuInfoDescService.save(spuInfoDesc);
 
         return R.ok();
     }
@@ -65,8 +65,8 @@ public class ProductAttrValueController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody ProductAttrValueEntity productAttrValue){
-		productAttrValueService.updateById(productAttrValue);
+    public R update(@RequestBody SpuInfoDescEntity spuInfoDesc){
+		spuInfoDescService.updateById(spuInfoDesc);
 
         return R.ok();
     }
@@ -75,8 +75,8 @@ public class ProductAttrValueController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids){
-		productAttrValueService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] spuIds){
+		spuInfoDescService.removeByIds(Arrays.asList(spuIds));
 
         return R.ok();
     }
